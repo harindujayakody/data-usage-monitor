@@ -428,13 +428,11 @@ class DataWireOptions {
 
       tbody.innerHTML = siteData.map(site => {
         const percentage = totalUsage > 0 ? ((site.total / totalUsage) * 100).toFixed(1) : 0;
-        const favicon = this.getFaviconUrl(site.domain);
         
         return `
           <tr>
             <td>
               <div class="site-row">
-                <img src="${favicon}" class="site-favicon" onerror="this.style.display='none'">
                 <span title="${site.domain}">${this.truncateText(site.domain, 30)}</span>
               </div>
             </td>
@@ -480,12 +478,6 @@ class DataWireOptions {
     }
   }
 
-  getFaviconUrl(domain) {
-    if (!domain || domain === 'unknown') {
-      return 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" fill="%23666" rx="2"/></svg>';
-    }
-    return `https://www.google.com/s2/favicons?domain=${domain}&sz=16`;
-  }
 
   updateElement(id, value) {
     const element = document.getElementById(id);
