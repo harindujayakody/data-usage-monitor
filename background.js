@@ -88,9 +88,6 @@ class DataUsageMonitor {
       
       this.isInitialized = true;
       console.log('DataUsageMonitor: Initialization complete');
-      
-      // Test the monitoring by adding some fake data initially
-      this.addTestData();
     } catch (error) {
       console.error('DataUsageMonitor: Initialization failed:', error);
     }
@@ -133,17 +130,6 @@ class DataUsageMonitor {
     console.log('DataUsageMonitor: Session reset via keyboard shortcut');
   }
 
-  // Add some test data to verify the system is working
-  addTestData() {
-    console.log('DataUsageMonitor: Adding test data...');
-    
-    // Add some fake data for testing
-    this.addUploadData(1024, 'https://example.com/test');
-    this.addDownloadData(5120, 'https://google.com/search');
-    this.addDownloadData(2048, 'https://github.com/test');
-    
-    console.log('DataUsageMonitor: Test data added');
-  }
 
   async loadStoredData() {
     try {

@@ -44,9 +44,9 @@ Detailed history, statistics, and data management options.
 
 ## Privacy
 
-- All data stays on your device
-- No external servers or tracking
-- Open source code
+- The extension observes requests across websites using `webRequest` and `<all_urls>` to estimate per-site traffic. It also requests tab access and notifications for its interface and alerts.
+- Usage totals, site domains, session data, and settings are stored in `chrome.storage.local`. The extension does not send usage data to an external service; exported data is saved when you choose to export it.
+- Chrome and the sites you visit handle their own network activity under their respective privacy policies.
 
 ## License
 
@@ -55,3 +55,5 @@ MIT License - see LICENSE file for details.
 ## Support
 
 Report issues or request features on GitHub Issues.
+
+
